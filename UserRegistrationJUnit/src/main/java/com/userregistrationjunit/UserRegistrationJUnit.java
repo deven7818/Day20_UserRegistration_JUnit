@@ -12,6 +12,7 @@ public class UserRegistrationJUnit{
 	 * 3. Method for Email validation
 	 * 4. Method for Mobile Number validation
 	 * 5. Method for Password Validation
+	 * 6. Method for multiple email sample validation 
 	 */
 	
 	Scanner sc = new Scanner(System.in);
@@ -74,6 +75,15 @@ public class UserRegistrationJUnit{
 		String regex = "^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]*[\\\\@\\\\#\\\\^][a-zA-Z0-9]*$";
 		String password = user.sc.next();
 		return Pattern.matches(regex, password);
+	}
+	
+
+	/**
+	 * Parameterized Method for Multiple Email validation validation 
+	 * @return - mails matches regex
+	 */	
+	public static boolean multipleEmails(String mails) {
+		return mails.matches("^[a-zA-Z0-9]+([._+-]*[0-9A-Za-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-z]{2,4})?$");
 	}
 
 }
